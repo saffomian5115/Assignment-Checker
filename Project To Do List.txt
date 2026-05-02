@@ -9,88 +9,88 @@
 --- BACKEND ---
 
 MODULE B-1: Project Setup & MongoDB
-  [ ] venv + install: fastapi, uvicorn, motor, pymongo, python-dotenv, python-multipart, pydantic
-  [ ] Folder structure: /app/api, /app/models, /app/services, /app/utils
+  [✔️] venv + install: fastapi, uvicorn, motor, pymongo, python-dotenv, python-multipart, pydantic
+  [✔️] Folder structure: /app/api, /app/models, /app/services, /app/utils
   [ ] .env: MONGO_URI, SECRET_KEY, LLAMA_URL, LANGUAGETOOL_URL
   [ ] MongoDB async connection (motor)
-  [ ] FastAPI app + /health endpoint
-  [ ] requirements.txt
+  [✔️] FastAPI app + /health endpoint
+  [✔️] requirements.txt
 
 MODULE B-2: Auth (JWT)
-  [ ] install: passlib, python-jose, bcrypt
-  [ ] User model: name, email, password_hash, role (teacher/student)
-  [ ] hash/verify password utils
-  [ ] create/decode JWT token
-  [ ] POST /api/auth/register
-  [ ] POST /api/auth/login
-  [ ] get_current_user() dependency
+  [✔️] install: passlib, python-jose, bcrypt
+  [✔️] User model: name, email, password_hash, role (teacher/student)
+  [✔️] hash/verify password utils
+  [✔️] create/decode JWT token
+  [✔️] POST /api/auth/register
+  [✔️] POST /api/auth/login
+  [✔️] get_current_user() dependency
 
 MODULE B-3: File Upload & Parsing
-  [ ] install: pymupdf, python-docx
-  [ ] Assignment model: student_id, title, filename, extracted_text, status
-  [ ] parse_pdf(), parse_docx(), parse_txt() utils
-  [ ] POST /api/assignments/submit (upload + parse + save)
-  [ ] GET  /api/assignments/my
-  [ ] GET  /api/assignments/{id}
+  [✔️] install: pymupdf, python-docx
+  [✔️] Assignment model: student_id, title, filename, extracted_text, status
+  [✔️] parse_pdf(), parse_docx(), parse_txt() utils
+  [✔️] POST /api/assignments/submit (upload + parse + save)
+  [✔️] GET  /api/assignments/my
+  [✔️] GET  /api/assignments/{id}
 
 MODULE B-4: Grammar Check (LanguageTool Docker)
-  [ ] Docker command: docker run -d -p 8010:8010 silviof/docker-languagetool
-  [ ] LANGUAGETOOL_URL=http://localhost:8010 in .env
-  [ ] check_grammar(text) → HTTP POST to LanguageTool
-  [ ] Parse errors: message, context, suggestions, type
-  [ ] grammar_score = max(0, 10 - errors/word_count*100)
-  [ ] Return: total_errors, errors[], grammar_score
+  [✔️] Docker command: docker run -d -p 8010:8010 silviof/docker-languagetool
+  [✔️] LANGUAGETOOL_URL=http://localhost:8010 in .env
+  [✔️] check_grammar(text) → HTTP POST to LanguageTool
+  [✔️] Parse errors: message, context, suggestions, type
+  [✔️] grammar_score = max(0, 10 - errors/word_count*100)
+  [✔️] Return: total_errors, errors[], grammar_score
 
 MODULE B-5: Plagiarism Check (Custom TF-IDF)
-  [ ] install: scikit-learn, numpy
-  [ ] preprocess_text(): lowercase, remove punctuation
-  [ ] calculate_similarity(text1, text2) → cosine similarity (0-1)
-  [ ] check_plagiarism(new_text, assignment_id):
+  [✔️] install: scikit-learn, numpy
+  [✔️] preprocess_text(): lowercase, remove punctuation
+  [✔️] calculate_similarity(text1, text2) → cosine similarity (0-1)
+  [✔️] check_plagiarism(new_text, assignment_id):
         fetch all DB texts → compare → return matches
-  [ ] Result: is_plagiarized (>0.7), similarity_score, matched_ids
-  [ ] Exclude self from comparison
+  [✔️] Result: is_plagiarized (>0.7), similarity_score, matched_ids
+  [✔️] Exclude self from comparison
 
 MODULE B-6: Content Quality (Llama 2 via Ollama)
-  [ ] Install Ollama, pull llama2: ollama pull llama2
-  [ ] LLAMA_URL=http://localhost:11434 in .env
-  [ ] analyze_content(text, subject) → POST to Ollama API
-  [ ] Prompt: "Evaluate this assignment. Return JSON only:
+  [✔️] Install Ollama, pull llama2: ollama pull llama2
+  [✔️] LLAMA_URL=http://localhost:11434 in .env
+  [✔️] analyze_content(text, subject) → POST to Ollama API
+  [✔️] Prompt: "Evaluate this assignment. Return JSON only:
        {relevance, structure, depth, clarity} scores 0-10,
        strengths[], improvements[], summary"
-  [ ] Parse JSON response safely (try/except)
-  [ ] Truncate text to 2000 words before sending
+  [✔️] Parse JSON response safely (try/except)
+  [✔️] Truncate text to 2000 words before sending
 
 MODULE B-7: Checker Orchestrator & Results
-  [ ] check_assignment(assignment_id):
+  [✔️] check_assignment(assignment_id):
         asyncio.gather → grammar + plagiarism + content parallel
-  [ ] final_score = grammar*0.30 + content*0.50 + plagiarism*0.20
-  [ ] If plagiarized → final_score = 0
-  [ ] grade: A(9+), B(7+), C(5+), D(3+), F(<3)
-  [ ] Save to "results" collection
-  [ ] POST /api/checker/check/{assignment_id}
-  [ ] GET  /api/checker/result/{assignment_id}
-  [ ] Auto-trigger check on submission (BackgroundTask)
+  [✔️] final_score = grammar*0.30 + content*0.50 + plagiarism*0.20
+  [✔️] If plagiarized → final_score = 0
+  [✔️] grade: A(9+), B(7+), C(5+), D(3+), F(<3)
+  [✔️] Save to "results" collection
+  [✔️] POST /api/checker/check/{assignment_id}
+  [✔️] GET  /api/checker/result/{assignment_id}
+  [✔️] Auto-trigger check on submission (BackgroundTask)
 
 MODULE B-8: Teacher APIs
-  [ ] GET  /api/teacher/assignments     — class list
-  [ ] GET  /api/teacher/assignment/{id} — detail
-  [ ] PUT  /api/teacher/assignment/{id}/grade  — override
-  [ ] POST /api/teacher/assignment/{id}/comment
-  [ ] GET  /api/analytics/overview  — avg score, plagiarism count
-  [ ] GET  /api/analytics/student/{id} — one student stats
+  [✔️] GET  /api/teacher/assignments     — class list
+  [✔️] GET  /api/teacher/assignment/{id} — detail
+  [✔️] PUT  /api/teacher/assignment/{id}/grade  — override
+  [✔️] POST /api/teacher/assignment/{id}/comment
+  [✔️] GET  /api/analytics/overview  — avg score, plagiarism count
+  [✔️] GET  /api/analytics/student/{id} — one student stats
 
 MODULE B-9: Student APIs
-  [ ] GET /api/student/my-assignments
-  [ ] GET /api/student/result/{id}
-  [ ] GET /api/student/progress
-  [ ] Notifications: GET /api/notifications, PUT /read
-  [ ] CORS setup for frontend
+  [✔️] GET /api/student/my-assignments
+  [✔️] GET /api/student/result/{id}
+  [✔️] GET /api/student/progress
+  [✔️] Notifications: GET /api/notifications, PUT /read
+  [✔️] CORS setup for frontend
 
 --- FRONTEND ---
 
 MODULE F-1: Vite Setup
-  [ ] npm create vite@latest frontend -- --template react
-  [ ] install: axios, react-router-dom, react-hook-form, recharts, react-hot-toast, tailwindcss
+  [✔️] npm create vite@latest frontend -- --template react
+  [✔️] install: axios, react-router-dom, react-hook-form, recharts, react-hot-toast, tailwindcss
   [ ] Folder: /pages, /components, /api, /context
   [ ] React Router routes
   [ ] Axios instance (base URL + JWT header)
