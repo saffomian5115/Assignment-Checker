@@ -91,24 +91,24 @@ MODULE B-9: Student APIs
 MODULE F-1: Vite Setup
   [✔️] npm create vite@latest frontend -- --template react
   [✔️] install: axios, react-router-dom, react-hook-form, recharts, react-hot-toast, tailwindcss
-  [ ] Folder: /pages, /components, /api, /context
-  [ ] React Router routes
-  [ ] Axios instance (base URL + JWT header)
-  [ ] AuthContext (login, logout, user state)
-  [ ] ProtectedRoute component
+  [✔️] Folder: /pages, /components, /api, /context
+  [✔️] React Router routes
+  [✔️] Axios instance (base URL + JWT header)
+  [✔️] AuthContext (login, logout, user state)
+  [✔️] ProtectedRoute component
 
 MODULE F-2: Login & Register Pages
-  [ ] Login: email + password + role → token save → redirect
-  [ ] Register: name, email, password, role
-  [ ] Form validation (react-hook-form)
-  [ ] Toast on success/error
-  [ ] Auto logout on 401
+  [✔️] Login: email + password + role → token save → redirect
+  [✔️] Register: name, email, password, role
+  [✔️] Form validation (react-hook-form)
+  [✔️] Toast on success/error
+  [✔️] Auto logout on 401
 
 MODULE F-3: Student — Submit & List
-  [ ] File upload (drag & drop, .pdf/.docx/.txt, max 5MB)
-  [ ] Title + subject input → POST submit
-  [ ] My assignments table: title, date, status badge, action
-  [ ] Poll every 5s if status = "checking"
+  [✔️] File upload (drag & drop, .pdf/.docx/.txt, max 5MB)
+  [✔️] Title + subject input → POST submit
+  [✔️] My assignments table: title, date, status badge, action
+  [✔️] Poll every 5s if status = "checking"
 
 MODULE F-4: Student — Result Page
   [ ] Final score + grade badge

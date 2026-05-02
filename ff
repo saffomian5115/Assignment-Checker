@@ -1,0 +1,19 @@
+src/
+├── api/
+│   ├──         ← Base instance + JWT interceptor + 401 auto-logout
+│   ├──         ← register, login, getMe
+│   └── 
+├── context/
+│   └── 
+├── components/
+│   └── 
+├── pages/
+│   ├── 
+│   ├── 
+│   ├── 
+│   ├── student/ (3 placeholder pages)
+│   └── teacher/ (2 placeholder pages)
+├── App.jsx             ← BrowserRouter + AuthProvider + Toaster
+├── AppRouter.jsx       ← All routes defined
+├── index.css           ← Full design system (dark theme, DM fonts, CSS vars)
+└── main.jsx            ← Updated entry point
