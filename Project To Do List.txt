@@ -111,17 +111,17 @@ MODULE F-3: Student — Submit & List
   [✔️] Poll every 5s if status = "checking"
 
 MODULE F-4: Student — Result Page
-  [ ] Final score + grade badge
-  [ ] 3 score cards: Grammar | Plagiarism | Content
-  [ ] Grammar errors list (message + suggestion)
-  [ ] Content: 4 sub-scores bar chart + strengths/improvements
-  [ ] Plagiarism: similarity % + warning if flagged
+  [✔️] Final score + grade badge
+  [✔️] 3 score cards: Grammar | Plagiarism | Content
+  [✔️] Grammar errors list (message + suggestion)
+  [✔️] Content: 4 sub-scores bar chart + strengths/improvements
+  [✔️] Plagiarism: similarity % + warning if flagged
 
 MODULE F-5: Teacher — Dashboard
-  [ ] 4 metric cards: Total, Avg Score, Plagiarism Cases, Pending
-  [ ] Bar chart: score distribution
-  [ ] Assignments table: student, score, status, plagiarism flag
-  [ ] Click row → detail page
+  [✔️] 4 metric cards: Total, Avg Score, Plagiarism Cases, Pending
+  [✔️] Bar chart: score distribution
+  [✔️] Assignments table: student, score, status, plagiarism flag
+  [✔️] Click row → detail page
 
 MODULE F-6: Teacher — Detail & Override
   [ ] Full result view (same as student + matched student names)
