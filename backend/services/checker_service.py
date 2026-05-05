@@ -1,8 +1,8 @@
 import asyncio
-from app.database import get_db
-from app.services.grammar_service import check_grammar
-from app.services.plagiarism_service import check_plagiarism
-from app.services.content_service import analyze_content
+from database import get_db
+from services.grammar_service import check_grammar
+from services.plagiarism_service import check_plagiarism
+from services.content_service import analyze_content
 from bson import ObjectId
 from datetime import datetime
 

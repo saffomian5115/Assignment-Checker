@@ -1,5 +1,5 @@
 import httpx
-from app.database import get_settings
+from database import get_settings
 from typing import List
 
 

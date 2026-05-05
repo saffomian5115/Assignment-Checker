@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, UploadFile, File, Form, HTTPException, BackgroundTasks
-from app.models.user import UserOut
-from app.models.assignment import AssignmentOut
-from app.api.auth import get_current_user, require_student
-from app.utils.file_parser import extract_text_from_upload
-from app.database import get_db
+from models.user import UserOut
+from models.assignment import AssignmentOut
+from api.auth import get_current_user, require_student
+from utils.file_parser import extract_text_from_upload
+from database import get_db
 from bson import ObjectId
 from datetime import datetime
 from typing import List
@@ -62,7 +62,7 @@ async def submit_assignment(
 
 async def run_check_background(assignment_id: str):
     """Background task to run all checks"""
-    from app.services.checker_service import check_assignment
+    from services.checker_service import check_assignment
     try:
         await check_assignment(assignment_id)
     except Exception as e:

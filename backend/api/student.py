@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
-from app.api.auth import require_student, get_current_user
-from app.models.user import UserOut
-from app.database import get_db
+from api.auth import require_student, get_current_user
+from models.user import UserOut
+from database import get_db
 from bson import ObjectId
 
 router = APIRouter()

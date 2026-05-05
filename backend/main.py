@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.database import connect_db, close_db
+from database import connect_db, close_db
 
 app = FastAPI(
     title="AI Assignment Checker",
@@ -33,7 +33,7 @@ async def health_check():
 
 
 # Import routers (will be added as modules complete)
-from app.api import auth, assignments, checker, teacher, student
+from api import auth, assignments, checker, teacher, student
 
 app.include_router(auth.router, prefix="/api/auth", tags=["Auth"])
 app.include_router(assignments.router, prefix="/api/assignments", tags=["Assignments"])

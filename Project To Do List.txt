@@ -124,13 +124,13 @@ MODULE F-5: Teacher — Dashboard
   [✔️] Click row → detail page
 
 MODULE F-6: Teacher — Detail & Override
-  [ ] Full result view (same as student + matched student names)
-  [ ] Manual grade input + comment textarea → save
-  [ ] Prev/Next assignment navigation
+  [✔️] Full result view (same as student + matched student names)
+  [✔️] Manual grade input + comment textarea → save
+  [✔️] Prev/Next assignment navigation
 
 MODULE F-7: Analytics & Progress
-  [ ] Student: line chart scores over time, common errors
-  [ ] Teacher: student-wise avg table, top grammar mistakes chart
+  [✔️] Student: line chart scores over time, common errors
+  [✔️] Teacher: student-wise avg table, top grammar mistakes chart
 
 MODULE F-8: Polish & Notifications
   [ ] Notification bell + dropdown

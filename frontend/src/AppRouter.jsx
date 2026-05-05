@@ -2,14 +2,15 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import { ProtectedRoute, RoleRoute } from './components/ProtectedRoute'
 
-// Pages (will be built in subsequent modules)
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import StudentDashboard from './pages/student/StudentDashboard'
 import SubmitAssignment from './pages/student/SubmitAssignment'
 import ResultPage from './pages/student/ResultPage'
+import StudentProgress from './pages/student/StudentProgress'   // F7
 import TeacherDashboard from './pages/teacher/TeacherDashboard'
 import AssignmentDetail from './pages/teacher/AssignmentDetail'
+import TeacherAnalytics from './pages/teacher/TeacherAnalytics' // F7
 import NotFound from './pages/NotFound'
 
 function RootRedirect() {
@@ -27,28 +28,15 @@ export default function AppRouter() {
       <Route path="/register" element={<RegisterPage />} />
 
       {/* Student routes */}
-      <Route
-        path="/student"
-        element={<RoleRoute role="student"><StudentDashboard /></RoleRoute>}
-      />
-      <Route
-        path="/student/submit"
-        element={<RoleRoute role="student"><SubmitAssignment /></RoleRoute>}
-      />
-      <Route
-        path="/student/result/:id"
-        element={<RoleRoute role="student"><ResultPage /></RoleRoute>}
-      />
+      <Route path="/student" element={<RoleRoute role="student"><StudentDashboard /></RoleRoute>} />
+      <Route path="/student/submit" element={<RoleRoute role="student"><SubmitAssignment /></RoleRoute>} />
+      <Route path="/student/result/:id" element={<RoleRoute role="student"><ResultPage /></RoleRoute>} />
+      <Route path="/student/progress" element={<RoleRoute role="student"><StudentProgress /></RoleRoute>} />
 
       {/* Teacher routes */}
-      <Route
-        path="/teacher"
-        element={<RoleRoute role="teacher"><TeacherDashboard /></RoleRoute>}
-      />
-      <Route
-        path="/teacher/assignment/:id"
-        element={<RoleRoute role="teacher"><AssignmentDetail /></RoleRoute>}
-      />
+      <Route path="/teacher" element={<RoleRoute role="teacher"><TeacherDashboard /></RoleRoute>} />
+      <Route path="/teacher/assignment/:id" element={<RoleRoute role="teacher"><AssignmentDetail /></RoleRoute>} />
+      <Route path="/teacher/analytics" element={<RoleRoute role="teacher"><TeacherAnalytics /></RoleRoute>} />
 
       {/* 404 */}
       <Route path="*" element={<NotFound />} />

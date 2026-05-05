@@ -2,7 +2,7 @@ import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from app.database import get_db
+from database import get_db
 from bson import ObjectId
 from typing import List
 

@@ -1,6 +1,6 @@
 import httpx
 import json
-from app.database import get_settings
+from database import get_settings
 
 MAX_WORDS = 2000
 

@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional, List
-from app.api.auth import require_teacher
-from app.models.user import UserOut
-from app.database import get_db
+from api.auth import require_teacher
+from models.user import UserOut
+from database import get_db
 from bson import ObjectId
 
 router = APIRouter()

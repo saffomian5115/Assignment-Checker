@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
-from app.api.auth import get_current_user
-from app.models.user import UserOut
-from app.services.checker_service import check_assignment
-from app.database import get_db
+from api.auth import get_current_user
+from models.user import UserOut
+from services.checker_service import check_assignment
+from database import get_db
 from bson import ObjectId
 
 router = APIRouter()
