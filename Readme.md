@@ -118,10 +118,10 @@ App runs at `http://localhost:5173`
 ```
 /
 ├── backend/
-│   ├── api/          # auth, assignments, checker, teacher, student
-│   ├── models/       # Pydantic models
-│   ├── services/     # grammar, plagiarism, content, checker
-│   ├── utils/        # file parser, auth utils
+│   ├── api/          
+│   ├── models/       
+│   ├── services/     
+│   ├── utils/        
 │   ├── database.py
 │   └── main.py
 └── frontend/
